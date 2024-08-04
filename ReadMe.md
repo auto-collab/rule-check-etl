@@ -1,4 +1,4 @@
-# ETL Rule Check Application
+# Rule Check ETL
 
 This project is designed to compare the results of SQL queries to test the transformation part of an ETL (Extract, Transform, Load) process. It verifies whether the data transformation rules are correctly applied by comparing data across landing, staging, and production tables.
 
@@ -21,25 +21,39 @@ This project is designed to compare the results of SQL queries to test the trans
     cd etl-rule-check
     ```
 
-2. **Create a virtual environment and activate it:**
+1. **Create a virtual environment and activate it:**
 
     ```bash
     python -m venv .venv
     source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
     ```
 
-3. **Install the dependencies:**
+1. **Install the dependencies:**
 
     ```bash
     pip install -r requirements.txt
     ```
 
+1. **To Test with sample ETL demo:** Open Sql Server and run the 
+
 ## Usage
 
-This application is designed to test the transformations between landing, staging, and production tables. It compares the results of SQL queries to determine if the transformation rules are correctly applied.
+### Adding Test Queries
+To add queries for testing, create a `.sql` file with your SQL queries. Each query should be delimited by a `;`. Here is an example format:
 
-## Configuration
+```sql
+### `queries.sql`
 
+-- Query to check email validity in staging
+SELECT 'Check email validity in staging' AS RuleUnderTest,
+       'staging' AS SchemaUnderTest,
+       CASE WHEN (SELECT COUNT(*) FROM staging WHERE email NOT LIKE '%@%') = 0 
+       THEN 'PASS' ELSE 'FAIL' END AS TestResult;
+
+-- Add more queries here...
+```
+### Configuration
+Currently only supporting database types listed in the `connection_templates` section.
 Configuration settings, including database connection details and connection string templates, are stored in `config.json`. Here is an example of the configuration file:
 
 ```json

@@ -1,5 +1,5 @@
 from db import DBFactory, DBManager
-from query import RuleChecker
+from rule import RuleChecker
 
 
 class AppBootstrapper:
