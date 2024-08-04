@@ -34,7 +34,7 @@ This will create and populate 3 tables (Landing, Staging, and Production) with d
 ## Usage
 
 ### Adding Test Queries
-To add queries for testing, create a `.sql` file with your SQL queries. Each query should be delimited by a `;`. Here is an example format:
+To add queries for testing, create a `.sql` file with your SQL queries. Each query should be delimited by a semicolon `;`. Here is an example format:
 
 ```sql
 ### `queries.sql`
@@ -53,7 +53,7 @@ Populate the configuration section `db_config` with your database info.
 ```json
 {
     "db_config": {
-        "type": "sqlserver", // Currently only supporting database types listed in the `connection_templates` section.
+        "type": "sqlserver",
         "Driver": "SQL Server",
         "server": "your_server_name",
         "database": "your_database_name",
