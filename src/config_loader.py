@@ -4,7 +4,7 @@ from typing import Any, Dict
 
 class ConfigLoader:
     _instance = None
-    _config_file = "config.json"
+    _config_file = "../config.json"
 
     def __new__(cls, config_file: str = None):
         if cls._instance is None:

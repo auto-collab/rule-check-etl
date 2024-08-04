@@ -1,5 +1,5 @@
 from typing import List
-from db.db_manager import DBManager
+from src.db.db_manager import DBManager
 
 
 def check_rule(query_result: List[tuple]) -> bool:
