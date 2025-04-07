@@ -1,15 +1,15 @@
 {
     "db_config": {
-        "Driver": "ODBC Driver 18 for SQL Server",
-        "type": "sqlserver",
-        "server": "MC-COMPUTER",
-        "database": "etl",
-        "user": "your_username",
-        "password": "your_password"
+        "Driver": "",
+        "type": "",
+        "server": "",
+        "database": "",
+        "user": "",
+        "password": ""
     },
     "connection_templates": {
-        "sqlserver": "Driver={Driver};Server={server};Database={database};TrustServerCertificate=yes;Trusted_Connection=yes;",
-        "mysql": "DRIVER={Driver};SERVER={server};DATABASE={database};USER={user};PASSWORD={password};",
-        "sqlite": "DRIVER={Driver};DATABASE={database};"
+        "sqlserver": "",
+        "mysql": "",
+        "sqlite": ""
     }
 }
