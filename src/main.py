@@ -5,7 +5,7 @@ from src.rule import RuleChecker
 
 
 def main():
-    ConfigLoader("../config.json")
+    ConfigLoader("..local.config.json")
 
     initializer = DBInitializer()
 
